@@ -1,5 +1,3 @@
-language: generic
-
 sudo: required
 services:
   - docker
@@ -8,4 +6,4 @@ before_install:
   - docker build -t estevanjantsk/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true estevanjantsk/docker-react npm run test
+  - docker run estevanjantsk/docker-react npm run test -- --coverage
